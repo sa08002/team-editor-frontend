@@ -1209,7 +1209,7 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/content@^1.5.0":
+"@nuxt/content@^1.5.3":
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.5.3.tgz#34de4ae5a556c783ab5c51ac2f3d11744e62acac"
   integrity sha512-Ev4HXkZgjdv12828hvspXGrq3IimwZGUGjQgt6i7qOtdWB2GvIGenfjFSy5d/x8z26CV9pTfIL8+oDgIc7UBcA==
@@ -1371,7 +1371,7 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/types@^2.14.0":
+"@nuxt/types@^2.14.1":
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.14.1.tgz#3a03eb9f0dc4249dadc8a45ece21b7e2d0e1f31c"
   integrity sha512-7nE5oDUkfad2/pu5pwr8a1x1xKNE2Y13w4N2c6IaR7Z2nO42vq90iELhC+vYnM2uQwYLYG9n3950hp2X2YMGkA==
@@ -2685,7 +2685,7 @@ babel-eslint@^10.1.0:
     eslint-visitor-keys "^1.0.0"
     resolve "^1.12.0"
 
-babel-jest@^26.1.0, babel-jest@^26.2.2:
+babel-jest@^26.2.2:
   version "26.2.2"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-26.2.2.tgz#70f618f2d7016ed71b232241199308985462f812"
   integrity sha512-JmLuePHgA+DSOdOL8lPxCgD2LhPPm+rdw1vnxR73PpIrnmKCS2/aBhtkAcxQWuUcW2hBrH8MJ3LKXE7aWpNZyA==
@@ -4834,7 +4834,7 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz#30ebd1ef7c2fdff01c3a4f151044af25fab0523e"
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
 
-eslint@^7.5.0:
+eslint@^7.6.0:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.6.0.tgz#522d67cfaea09724d96949c70e7a0550614d64d6"
   integrity sha512-QlAManNtqr7sozWm5TF4wIH9gmUm2hE3vNRUvyoYAa4y1l5/jxD/PQStEjBMQtCqZmSep8UxrcecI60hOpe61w==
@@ -7052,7 +7052,7 @@ jest-worker@^26.2.1:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jest@^26.1.0:
+jest@^26.2.2:
   version "26.2.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-26.2.2.tgz#a022303887b145147204c5f66e6a5c832333c7e7"
   integrity sha512-EkJNyHiAG1+A8pqSz7cXttoVa34hOEzN/MrnJhYnfp5VHxflVcf2pu3oJSrhiy6LfIutLdWo+n6q63tjcoIeig==
@@ -8087,7 +8087,7 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt@^2.14.0:
+nuxt@^2.14.1:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.14.1.tgz#e3e6e0a553a38c29b1d915d5ec75af9da2808c95"
   integrity sha512-baf5/GeLxEtgZm5lcEsanULok+fk6iCPi+BSLdfdSHQJQIyzD9OIJ94FiXigRjNfiR+765VPvB9YMtmbS3Ho3A==
@@ -11085,7 +11085,7 @@ tryer@^1.0.1:
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
 
-ts-jest@^26.1.3:
+ts-jest@^26.1.4:
   version "26.1.4"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.1.4.tgz#87d41a96016a8efe4b8cc14501d3785459af6fa6"
   integrity sha512-Nd7diUX6NZWfWq6FYyvcIPR/c7GbEF75fH1R6coOp3fbNzbRJBZZAn0ueVS0r8r9ral1VcrpneAFAwB3TsVS1Q==
@@ -11633,7 +11633,7 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-jest@^3.0.4:
+vue-jest@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-3.0.6.tgz#27f79d75dcddbe6b3d8327ca1450a107b9cd6f38"
   integrity sha512-VyuM8wR0vAlYCbPRY+PhIqRU5yUyBnUmwYTo4IFScs2+tiuis5VBItU0PGC8Wcx6qJwKB5jq5p7WFhabzMFMgQ==
