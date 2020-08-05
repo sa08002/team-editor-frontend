@@ -27,7 +27,7 @@ const config: Configuration = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
     },
   },
   build: {},
