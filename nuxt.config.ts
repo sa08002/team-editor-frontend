@@ -3,6 +3,9 @@ import { Configuration } from '@nuxt/types'
 const config: Configuration = {
   mode: 'universal',
   srcDir: 'app',
+  env: {
+    baseUrl: 'http://localhost:3000',
+  },
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -22,7 +25,9 @@ const config: Configuration = {
   components: true,
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3000',
+  },
   content: {},
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
