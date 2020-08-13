@@ -21,7 +21,7 @@ const config: Configuration = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [],
-  plugins: ['~/plugins/cookie-storage.js'],
+  plugins: ['~/plugins/cookie-storage.js', '~/plugins/axios.js'],
   components: true,
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
