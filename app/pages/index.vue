@@ -21,6 +21,7 @@ export default class Articles extends Vue {
     },
     {
       title: "java 学習方法"
-    }]
+    }
+  ]
 }
 </script>
