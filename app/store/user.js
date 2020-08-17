@@ -1,7 +1,7 @@
-export const state = {
+export const state = () => ({
   headers: {},
   isSignIn: false,
-}
+})
 
 export const getters = {}
 
