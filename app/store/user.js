@@ -3,7 +3,9 @@ export const state = {
   isSignIn: false,
 }
 
-export const getters = {}
+export const getters = {
+  headers: (state) => state.headers,
+}
 
 export const mutations = {
   setHeaders(state, headers) {
