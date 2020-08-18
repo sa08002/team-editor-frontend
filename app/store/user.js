@@ -5,6 +5,7 @@ export const state = () => ({
 
 export const getters = {
   headers: (state) => state.headers,
+  isSignIn: (state) => state.isSignIn,
 }
 
 export const mutations = {
