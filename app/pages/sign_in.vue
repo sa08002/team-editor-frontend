@@ -56,7 +56,9 @@ export default class SignInPage extends Vue {
       email: this.email,
       password: this.password,
     }
-    await this.$store.dispatch('user/signIn', params)
+    await this.$store.dispatch('user/signIn', params).then(() => {
+      this.$router.push('/')
+    })
   }
 }
 </script>
