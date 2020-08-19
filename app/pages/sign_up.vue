@@ -77,6 +77,7 @@ export default class SignUpPage extends Vue {
     }
 
     await this.$store.dispatch('user/signUp', params)
+    this.$router.push('/')
   }
 }
 </script>

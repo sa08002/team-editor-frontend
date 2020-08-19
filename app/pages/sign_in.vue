@@ -57,6 +57,7 @@ export default class SignInPage extends Vue {
       password: this.password,
     }
     await this.$store.dispatch('user/signIn', params)
+    this.$router.push('/')
   }
 }
 </script>
