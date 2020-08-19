@@ -76,8 +76,9 @@ export default class SignUpPage extends Vue {
       password: this.password,
     }
 
-    await this.$store.dispatch('user/signUp', params)
-    this.$router.push('/')
+    await this.$store.dispatch('user/signUp', params).then(() => {
+      this.$router.push('/')
+    })
   }
 }
 </script>
