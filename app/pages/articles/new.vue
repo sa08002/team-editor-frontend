@@ -50,7 +50,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 @Component
-export default class PostArticlePage extends Vue {
+export default class PosrArticleNewPage extends Vue {
   title = ''
   content = ''
   loading = false
@@ -59,7 +59,7 @@ export default class PostArticlePage extends Vue {
       title: this.title,
       content: this.content,
     }
-    await this.$store.dispatch('article/postArticle', params).then(() => {
+    await this.$store.dispatch('article/postArticleNew', params).then(() => {
       this.$router.push('/')
     })
   }

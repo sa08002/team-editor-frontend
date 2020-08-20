@@ -5,7 +5,7 @@ export const getters = {}
 export const mutations = {}
 
 export const actions = {
-  async postArticle({ commit }, params) {
+  async postArticleNew({ commit }, params) {
     await this.$axios.post('/v1/articles', params).then(() => {})
   },
 }
