@@ -34,7 +34,7 @@
       </v-form>
       <v-btn
         color="cyan"
-        elevation="10"
+        elevation="4"
         ripple
         block
         depressed
