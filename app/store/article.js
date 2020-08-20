@@ -1,11 +1,11 @@
-export const state = {}
+export const state = () => ({})
 
 export const getters = {}
 
 export const mutations = {}
 
 export const actions = {
-  async postArticleNew({ commit }, params) {
+  async articleNew({ commit }, params) {
     await this.$axios.post('/v1/articles', params).then(() => {})
   },
 }
