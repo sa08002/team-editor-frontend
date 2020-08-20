@@ -1,24 +1,23 @@
 <template>
   <div>
-    <ul v-for="article in articles" :key="article">
-      <li>タイトル : {{ articles.title }}</li>
+    <ul v-for="article in articles" :key="article.title">
+      <li>タイトル : {{ article.title }}</li>
       <hr>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'nuxt-property-decorator';
-  @Component
-  export default class Articles extends Vue {
-    articles = [
-      {
-        title: ""
-      }
-    ]
+import { Component, Vue } from 'nuxt-property-decorator'
+@Component
+export default class Articles extends Vue {
 
-    get articles() {
-      return this.$store.getters['article/articles']
-    }
+  mounted() {
+    this.$store.dispatch('article/getArticles')
   }
+
+  get articles() {
+    return this.$store.getters['article/articles']
+  }
+}
 </script>

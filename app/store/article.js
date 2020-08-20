@@ -15,8 +15,8 @@ export const mutations = {
 export const actions = {
   async getArticles({ commit }) {
     await this.$axios.get('/v1/articles').then((response) => {
-      const articles = response.body
+      const articles = response.data
+      commit('setArticles', articles)
     })
-    commit('setArticles', articles)
   },
 }
