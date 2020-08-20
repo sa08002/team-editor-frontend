@@ -13,7 +13,6 @@
           required
           outlined
           color="#212121"
-          placeholder="タイトルを入力してください"
         />
       </v-form>
       <v-form ref="contentForm" @submit.prevent>
