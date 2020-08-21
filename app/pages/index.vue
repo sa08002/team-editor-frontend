@@ -15,7 +15,7 @@ import { Context } from '@nuxt/types'
   async fetch(context: Context) {
     const { store, error } = context
     try {
-      await this.$store.dispatch('article/getArticles')
+      await store.dispatch('article/getArticles')
     } catch (err) {
       error({
         statusCode: err.response.status,
