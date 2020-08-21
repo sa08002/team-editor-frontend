@@ -1,21 +1,7 @@
 <template>
   <v-layout justify-center :class="$style.layout">
     <v-flex :class="$style.container">
-      <h2 :class="$style.title">新規登録する</h2>
-
-      <v-form ref="nameForm" @submit.prevent>
-        <v-text-field
-          v-model="name"
-          name="nickname"
-          label="ニックネーム"
-          data-vv-name="name"
-          required
-          outlined
-          color="#212121"
-          placeholder="例: チームエディ太"
-          @keypress.enter="submit"
-        />
-      </v-form>
+      <h2 :class="$style.title">ログインする</h2>
       <v-form ref="emailForm" @submit.prevent>
         <v-text-field
           v-model="email"
@@ -44,7 +30,6 @@
           @keypress.enter="submit"
         />
       </v-form>
-
       <v-btn
         color="#f96204"
         block
@@ -53,30 +38,25 @@
         class="white--text font-weight-bold"
         :class="[$style.button, $style.register]"
         @click="submit"
-        >登録する（無料）</v-btn
+        >ログインする</v-btn
       >
     </v-flex>
   </v-layout>
 </template>
-
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-
 @Component
-export default class SignUpPage extends Vue {
-  name = ''
+export default class SignInPage extends Vue {
+  // name = ''
   email = ''
   password = ''
   loading = false
-
   async submit(): Promise<void> {
     const params = {
-      name: this.name,
       email: this.email,
       password: this.password,
     }
-
-    await this.$store.dispatch('user/signUp', params).then(() => {
+    await this.$store.dispatch('user/signIn', params).then(() => {
       this.$router.push('/')
     })
   }
