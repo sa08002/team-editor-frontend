@@ -1,3 +1,4 @@
+export const strict = false
 export const state = () => ({
   headers: {},
   isSignIn: false,
@@ -35,8 +36,8 @@ export const actions = {
       commit('setIsSignIn', true)
     })
   },
-  async signIn({ commit }, params){
-    await this.$axios.post('/v1/auth/sign_in',params).then((response) =>{
+  async signIn({ commit }, params) {
+    await this.$axios.post('/v1/auth/sign_in', params).then((response) => {
       const headers = response.headers
 
       const loginInfoHeaders = {
