@@ -53,7 +53,7 @@ import { Context } from '@nuxt/types'
   async fetch(context: Context) {
     const { store, error } = context
     try {
-      await store.dispatch('article/editArticle')
+      await store.dispatch('article/fetchArticle')
     } catch (err) {
       error({
         statusCode: err.response.status,

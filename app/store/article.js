@@ -12,7 +12,7 @@ export const mutations = {
   setArticles(state, articles) {
     state.articles = articles
   },
-  editArticle(state, article) {
+  setArticle(state, article) {
     state.article = article
   },
 }
@@ -30,10 +30,10 @@ export const actions = {
   async updateArticle({ commit }, params) {
     await this.$axios.patch('/v1/articles/:id', params).then(() => {})
   },
-  async editArticle({ commit }, params) {
+  async fetchArticle({ commit }, params) {
     await this.$axios.get('/v1/articles/:id', params).then((response) => {
       const article = response.data
-      commit('editArticle', article)
+      commit('setArticle', article)
     })
   },
 }
