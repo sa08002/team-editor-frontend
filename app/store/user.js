@@ -1,4 +1,3 @@
-export const strict = false
 export const state = () => ({
   headers: {},
   isSignIn: false,
