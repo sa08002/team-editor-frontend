@@ -5,9 +5,9 @@
       <v-form ref="titleForm" @submit.prevent>
         <v-text-field
           v-model="title"
-          type="title"
-          name="name"
-          label="title"
+          type="text"
+          name="title"
+          label="タイトル"
           data-vv-name="title"
           solo
           required

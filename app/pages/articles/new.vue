@@ -5,7 +5,7 @@
       <v-form ref="titleForm" @submit.prevent>
         <v-text-field
           v-model="title"
-          type="title"
+          type="text"
           name="title"
           label="タイトル"
           data-vv-name="title"
