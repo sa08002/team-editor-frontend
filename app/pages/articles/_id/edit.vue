@@ -51,9 +51,10 @@ import { Context } from '@nuxt/types'
 
 @Component({
   async fetch(context: Context) {
-    const { store, error } = context
+    const { store, error, route } = context
+    const id = route.params.id
     try {
-      await store.dispatch('article/fetchArticle')
+      await store.dispatch('article/fetchArticle', id)
     } catch (err) {
       error({
         statusCode: err.response.status,
@@ -67,17 +68,28 @@ export default class ArticleEditPage extends Vue {
   content = this.article.content
   loading = false
   async submit(): Promise<void> {
+    this.loading = true
     const params = {
       title: this.title,
       content: this.content,
+      id: this.$route.params.id,
     }
-    await this.$store.dispatch('article/updateArticle', params).then(() => {
-      this.$router.push('/')
-    })
+    await this.$store
+      .dispatch('article/updateArticle', params)
+      .then(() => {
+        this.$router.push('/')
+      })
+      .finally(() => {
+        this.loading = false
+      })
   }
 
   get article() {
     return this.$store.getters['article/article']
+  }
+
+  get articleId() {
+    return this.$route.params.id
   }
 }
 </script>

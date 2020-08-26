@@ -28,10 +28,10 @@ export const actions = {
     await this.$axios.post('/v1/articles', params).then(() => {})
   },
   async updateArticle({ commit }, params) {
-    await this.$axios.patch('/v1/articles/:id', params).then(() => {})
+    await this.$axios.patch(`/v1/articles/${params.id}`, params).then(() => {})
   },
-  async fetchArticle({ commit }, params) {
-    await this.$axios.get('/v1/articles/:id', params).then((response) => {
+  async fetchArticle({ commit }, id) {
+    await this.$axios.get(`/v1/articles/${id}`, id).then((response) => {
       const article = response.data
       commit('setArticle', article)
     })
