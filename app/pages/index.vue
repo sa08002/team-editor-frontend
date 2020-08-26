@@ -1,8 +1,14 @@
 <template>
   <div>
     <ul v-for="article in articles" :key="article.id">
-      <li>タイトル : {{ article.title }}</li>
-      <hr>
+      <li>
+        タイトル :
+        <router-link :to="`articles/${article.id}/detail`">
+          {{ article.title }}</router-link
+        >
+      </li>
+      <router-link :to="`articles/${article.id}/edit`">編集</router-link>
+      <hr />
     </ul>
   </div>
 </template>
