@@ -87,10 +87,6 @@ export default class ArticleEditPage extends Vue {
   get article() {
     return this.$store.getters['article/article']
   }
-
-  get articleId() {
-    return this.$route.params.id
-  }
 }
 </script>
 <style lang="scss" module>
