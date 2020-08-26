@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center :class="$style.layout">
     <v-flex :class="$style.container">
-      <h2 :class="$style.title">記事投稿</h2>
+      <h2 :class="$style.title">記事編集</h2>
       <v-form ref="titleForm" @submit.prevent>
         <v-text-field
           v-model="title"
@@ -19,7 +19,6 @@
         <v-textarea
           v-model="content"
           class="textarea"
-          value="value"
           type="text"
           rows="5"
           name="content"
@@ -29,7 +28,6 @@
           counter
           outlined
           color="#212121"
-          placeholder="本文を入力してください"
         />
       </v-form>
       <v-btn
@@ -42,72 +40,88 @@
         class="white--text font-weight-bold"
         :class="[$style.button, $style.register]"
         @click="submit"
-        >投稿する</v-btn
+        >更新する</v-btn
       >
     </v-flex>
   </v-layout>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-@Component
-export default class articleNewPage extends Vue {
-  title = ''
-  content = ''
+import { Context } from '@nuxt/types'
+
+@Component({
+  async fetch(context: Context) {
+    const { store, error, route } = context
+    const id = route.params.id
+    try {
+      await store.dispatch('article/fetchArticle', id)
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
+  },
+})
+export default class ArticleEditPage extends Vue {
+  title = this.article.title
+  content = this.article.content
   loading = false
   async submit(): Promise<void> {
+    this.loading = true
     const params = {
       title: this.title,
       content: this.content,
+      id: this.$route.params.id,
     }
-    await this.$store.dispatch('article/articleNew', params).then(() => {
-      this.$router.push('/')
-    })
+    await this.$store
+      .dispatch('article/updateArticle', params)
+      .then(() => {
+        this.$router.push('/')
+      })
+      .finally(() => {
+        this.loading = false
+      })
+  }
+
+  get article() {
+    return this.$store.getters['article/article']
   }
 }
 </script>
-
 <style lang="scss" module>
 .layout {
   background: #f7f9f9;
-
   .container {
     height: 100%;
     max-width: 360px;
     padding: 20px 20px 60px;
     background: white;
   }
-
   .title {
     text-align: center;
     margin-bottom: 20px;
   }
-
   .sign_in_link {
     display: flex;
     justify-content: center;
     text-decoration: none;
   }
-
   .terms {
     margin-right: 6px;
   }
-
   .register {
     margin-top: 20px;
   }
-
   .divider {
     margin: 20px 0;
   }
-
   .social_title {
     margin-bottom: 20px;
   }
-
   .button {
     margin-bottom: 14px;
   }
-
   .sns_text {
     color: #ffffff;
     margin-left: 8px;
