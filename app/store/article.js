@@ -31,7 +31,7 @@ export const actions = {
     await this.$axios.patch(`/v1/articles/${params.id}`, params).then(() => {})
   },
   async deleteArticle({ commit }, id) {
-    await this.$axios.delete(`/v1/articles/${id}`, id).then(() => {})
+    await this.$axios.delete(`/v1/articles/${id}`)
   },
   async fetchArticle({ commit }, id) {
     await this.$axios.get(`/v1/articles/${id}`, id).then((response) => {
