@@ -7,7 +7,7 @@
       <h2>本文</h2>
       <p>{{ article.content }}</p>
       <p>投稿者：{{ article.user.name }}</p>
-      <div v-if="authorIdentification">
+      <div v-if="isMyArticle === true">
         <v-btn
           elevation="4"
           ripple
@@ -74,16 +74,8 @@ export default class ArticleDetailPage extends Vue {
     return this.$store.getters['article/article']
   }
 
-  get author() {
-    return this.$store.getters['article/article'].user.uid
-  }
-
-  get currentUser() {
-    return this.$store.getters['user/headers'].uid
-  }
-
-  get authorIdentification() {
-    return this.author === this.currentUser
+  get isMyArticle() {
+    return this.article.is_my_article
   }
 }
 </script>
