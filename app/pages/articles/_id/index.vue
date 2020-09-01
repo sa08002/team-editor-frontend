@@ -7,7 +7,7 @@
       <h2>本文</h2>
       <p>{{ article.content }}</p>
       <p>投稿者：{{ article.user.name }}</p>
-      <div v-if="contributor == currentUser">
+      <div v-if="authorIdentification">
         <v-btn
           elevation="4"
           ripple
@@ -15,7 +15,7 @@
           class="white--text font-weight-bold"
           :class="[$style.button, $style.register]"
           color="cyan"
-          :to="`/articles/${$route.params.id}/edit`"
+          :to="`/articles/${id}/edit`"
           nuxt
           >編集</v-btn
         >
@@ -59,13 +59,9 @@ export default class ArticleDetailPage extends Vue {
   loading = false
   async submit(): Promise<void> {
     this.loading = true
-    const params = {
-      title: this.title,
-      content: this.content,
-      id: this.$route.params.id,
-    }
+    const id = this.$route.params.id
     await this.$store
-      .dispatch('article/deleteArticle', params)
+      .dispatch('article/deleteArticle', id)
       .then(() => {
         this.$router.push('/')
       })
@@ -78,12 +74,16 @@ export default class ArticleDetailPage extends Vue {
     return this.$store.getters['article/article']
   }
 
-  get contributor() {
+  get author() {
     return this.$store.getters['article/article'].user.uid
   }
 
   get currentUser() {
     return this.$store.getters['user/headers'].uid
+  }
+
+  get authorIdentification() {
+    return this.author === this.currentUser
   }
 }
 </script>
