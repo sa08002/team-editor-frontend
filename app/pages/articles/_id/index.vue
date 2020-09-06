@@ -7,7 +7,7 @@
       <h2>本文</h2>
       <p>{{ article.content }}</p>
       <p>投稿者：{{ article.user.name }}</p>
-      <div v-if="isMyArticle === true">
+      <div v-if="isMyArticle">
         <v-btn
           elevation="4"
           ripple
@@ -31,7 +31,6 @@
           >削除</v-btn
         >
       </div>
-      <!-- </div> -->
     </v-flex>
   </v-layout>
 </template>
