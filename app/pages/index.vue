@@ -10,6 +10,7 @@
       <router-link :to="`articles/${article.id}/edit`">編集</router-link>
       <hr />
     </ul>
+    <router-link :to="`articles/new`">投稿</router-link>
   </div>
 </template>
 
