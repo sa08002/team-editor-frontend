@@ -4,7 +4,7 @@ const config: Configuration = {
   mode: 'universal',
   srcDir: 'app',
   env: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
@@ -26,7 +26,7 @@ const config: Configuration = {
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
   axios: {
-    baseURL: 'http://localhost:3000',
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
   },
   content: {},
   vuetify: {
